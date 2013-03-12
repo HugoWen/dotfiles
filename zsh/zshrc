@@ -38,3 +38,38 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+
+# PHP
+PATH="/usr/local/sbin:/sbin:$PATH"
+export PATH="$(brew --prefix php54)/bin:$PATH"
+
+# Mongodb
+PATH=$PATH:/usr/local/opt/mongodb/bin
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+# nginx control
+#alias nginx_start='sudo launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist'
+#alias nginx_stop='sudo launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist'
+#alias nginx_restart='nginx_stop; nginx_start;'
+alias nginx_start='sudo nginx'
+alias nginx_stop='sudo nginx -s stop'
+alias nginx_restart='nginx_stop; nginx_start;'
+
+# php-fpm control
+#alias php_start='sudo launchctl load -w ~/Library/LaunchAgents/homebrew-php.josegonzalez.php54.plist'
+#alias php_stop='sudo launchctl unload -w ~/Library/LaunchAgents/homebrew-php.josegonzalez.php54.plist'
+#alias php_restart='php_stop; php_start;'
+alias php_start='sudo php-fpm'
+alias php_stop='sudo kill `cat /var/run/php-fpm.pid`'
+alias php_restart='php_stop; php_start;'
+
+# mysql control
+alias mysql_start='mysql.server start'
+alias mysql_stop='mysql.server stop'
+alias mysql_restart='mysql.server restart'
+
+# mongo control
+alias mongo_start='/usr/local/opt/mongodb/bin/mongod --fork'
+alias mongo_stop='sh ~/.dotfiles/sh/mongo_stop'
+alias mongo_restart='mongo_stop; mongo_start;'

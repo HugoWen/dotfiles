@@ -1,0 +1,6 @@
+#!/bin/zsh
+
+pid=`ps aux | grep mongod | grep -v "grep" | awk -F" "  '{print $2}'`;
+if [ "${pid}" != "" ]; then
+    kill -2 ${pid};
+fi
