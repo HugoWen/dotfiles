@@ -2,6 +2,9 @@ dotfiles
 ========
 
 dotfiles, like vim,git,zsh,...
+配置文件均来自网络，加上部分自己的修改。
+
+
 
 
 ###VIM
@@ -23,4 +26,6 @@ ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc
 chsh -s /bin/zsh 
 ```
 
+###鼠须管 https://github.com/Aben/squirrel-setting
+sh ~/.dotfiles/squirrel-setting/install.sh
 
