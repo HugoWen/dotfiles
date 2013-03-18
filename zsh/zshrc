@@ -73,3 +73,26 @@ alias mysql_restart='mysql.server restart'
 alias mongo_start='/usr/local/opt/mongodb/bin/mongod --fork'
 alias mongo_stop='sh ~/.dotfiles/sh/mongo_stop'
 alias mongo_restart='mongo_stop; mongo_start;'
+
+# pythonbrew
+[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+
+# virtualenv
+# http://765i.cn/设置一个干净的python环境（python沙盒）/
+export WORKON_HOME=$HOME/.virtualenvs
+export VIRTUALENVWRAPPER_PYTHON=$HOME/.pythonbrew/pythons/Python-2.7.3/bin/python
+source $HOME/.pythonbrew/pythons/Python-2.7.3/bin/virtualenvwrapper.sh
+# virtualenv aliases
+alias v='workon'
+alias v.deactivate='deactivate'
+alias v.de='deactivate'
+alias v.mk='mkvirtualenv --no-site-packages'
+alias v.mk_withsitepackages='mkvirtualenv'
+alias v.mkw='mkvirtualenv'
+alias v.rm='rmvirtualenv'
+alias v.switch='workon'
+alias v.add2virtualenv='add2virtualenv'
+alias v.cdsitepackages='cdsitepackages'
+alias v.cd='cdvirtualenv'
+alias v.lssitepackages='lssitepackages'
+alias v.ls='lssitepackages'
