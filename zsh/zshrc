@@ -96,3 +96,9 @@ alias v.cdsitepackages='cdsitepackages'
 alias v.cd='cdvirtualenv'
 alias v.lssitepackages='lssitepackages'
 alias v.ls='lssitepackages'
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
+
+# 翻墙 GoAgent
+alias goagent='sudo python ~/Tools/goagent/local/proxy.py'
