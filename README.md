@@ -22,7 +22,7 @@ Launch vim
 
 ###ZSH
 ``` bash
-ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc 
+ln -s ~/.dotfiles/zshrc ~/.zshrc 
 chsh -s /bin/zsh 
 ```
 
