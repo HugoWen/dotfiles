@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-gawk -f ~/.dotfiles/bin/translate.awk $@
+gawk -f ~/.dotfiles/bin/google-translate-cli/translate.awk $@
