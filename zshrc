@@ -102,3 +102,14 @@ export PATH="/usr/local/heroku/bin:$PATH"
 
 # 翻墙 GoAgent
 alias goagent='sudo python ~/Tools/goagent/local/proxy.py'
+
+# 加入到path
+PATH=$PATH:~/.dotfiles/bin
+
+# android-sdk
+PATH=$PATH:~/Documents/adt-bundle-mac-x86_64-20130219/sdk/tools
+
+# proxy切换
+alias proxy="sudo sh ~/.dotfiles/sh/proxy.sh on"
+alias proxy_off="sudo sh ~/.dotfiles/sh/proxy.sh off"
+alias proxy_all="sudo sh ~/.dotfiles/sh/proxy.sh all"
