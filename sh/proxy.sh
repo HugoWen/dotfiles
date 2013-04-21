@@ -14,7 +14,7 @@ proxy_off(){
 
 #打开http和https代理
 proxy_all(){
-   networksetup -setsecurewebproxystate 'Wi-Fi' on
+   networksetup -setwebproxystate 'Wi-Fi' on
    networksetup -setsecurewebproxystate 'Wi-Fi' on
 }
 
