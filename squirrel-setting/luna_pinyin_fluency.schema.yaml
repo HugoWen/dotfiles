@@ -1,11 +1,10 @@
 # Rime schema
-# vim: set sw=2 sts=2 et:
 # encoding: utf-8
 
 schema:
   schema_id: luna_pinyin_fluency
   name: 朙月拼音・語句流
-  version: "0.13"
+  version: "0.18"
   author:
     - 佛振 <chen.sst@gmail.com>
   description: |
@@ -41,6 +40,7 @@ engine:
     - fallback_segmentor
   translators:
     - punct_translator
+    - table_translator@custom_phrase
     - r10n_translator
     - reverse_lookup_translator
   filters:
@@ -69,12 +69,21 @@ translator:
   dictionary: luna_pinyin
   prism: luna_pinyin_fluency
   preedit_format:
-    - xform/([nljqxy])v/$1ü/
+    - xform/([nl])v/$1ü/
+    - xform/([nl])ue/$1üe/
+    - xform/([jqxy])v/$1u/
+
+custom_phrase:
+  dictionary: ""
+  user_dict: custom_phrase
+  db_class: stabledb
+  enable_sentence: false
 
 reverse_lookup:
   dictionary: cangjie5
   enable_completion: true
   prefix: "`"
+  suffix: "'"
   tips: 〔倉頡〕
   preedit_format:
     - "xlit|abcdefghijklmnopqrstuvwxyz|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符|"
@@ -82,7 +91,7 @@ reverse_lookup:
     - xform/([nl])v/$1ü/
 
 punctuator:
-  import_preset: default
+  import_preset: symbols
 
 key_binder:
   import_preset: default
@@ -91,4 +100,5 @@ recognizer:
   import_preset: default
   patterns:
     number: "^[-+]?[0-9][.:0-9]*[%]?$"
-    reverse_lookup: "`[a-z]*$"
+    punct: "^/[a-z]*$"
+    reverse_lookup: "`[a-z]*'?$"
