@@ -38,6 +38,8 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+# z
+source ${HOME}/.dotfiles/z/z.sh
 
 # PHP
 PATH="/usr/local/sbin:/sbin:$PATH"
