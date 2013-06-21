@@ -38,6 +38,11 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+export LC_CTYPE="utf-8"
+
 # z
 source ${HOME}/.dotfiles/z/z.sh
 
@@ -115,3 +120,7 @@ PATH=$PATH:~/Documents/adt-bundle-mac-x86_64-20130219/sdk/tools
 alias proxy="sudo sh ~/.dotfiles/sh/proxy.sh on"
 alias proxy_off="sudo sh ~/.dotfiles/sh/proxy.sh off"
 alias proxy_all="sudo sh ~/.dotfiles/sh/proxy.sh all"
+
+
+#sublime text2
+alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'

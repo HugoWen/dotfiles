@@ -10,7 +10,7 @@ dotfiles, like vim,git,zsh,...
 ###VIM
 ``` bash
 ln -s ~/.dotfiles/vim ~/.vim
-ln -s ~/.vimrc ~/.vim/vimrc
+ln -s ~/.vim/vimrc ~/.vimrc
 git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
 ```
 

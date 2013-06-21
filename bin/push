@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [ $1 ]
+then
+    curl -d 'domains=henter&q=henter&content='$1 http://1290.me/\!push-msgadd
+else
+    echo 'please input content';
+fi
