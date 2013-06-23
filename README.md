@@ -26,6 +26,9 @@ ln -s ~/.dotfiles/zshrc ~/.zshrc
 chsh -s /bin/zsh 
 ```
 
+###tmux
+ln -s ~/.dotfiles/tmux/.tmux.conf ~/.tmux.conf 
+
 ###鼠须管 https://github.com/Aben/squirrel-setting
 sh ~/.dotfiles/squirrel-setting/install.sh
 
