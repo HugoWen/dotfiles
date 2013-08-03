@@ -1,0 +1,23 @@
+[user]
+	name = henter
+	email = henter@henter.me
+[core]
+	mergeoptions = --no-edit
+	excludesfile = /Users/henter/.gitignore_global
+	editor = /usr/bin/vim
+	filemode = false
+[alias]
+  ci = commit -a -v
+  co = checkout
+  st = status
+  br = branch
+  throw = reset --hard HEAD
+  throwh = reset --hard HEAD^
+[color]
+  ui = true
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true

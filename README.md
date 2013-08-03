@@ -5,7 +5,10 @@ dotfiles, like vim,git,zsh,...
 配置文件均来自网络，加上部分自己的修改。
 
 
-
+###Git
+``bash
+ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+``
 
 ###VIM
 ``` bash
