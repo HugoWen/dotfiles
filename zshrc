@@ -46,15 +46,16 @@ export LC_CTYPE="utf-8"
 # z
 source ${HOME}/.dotfiles/z/z.sh
 
-# PHP
-PATH="/usr/local/sbin:/sbin:$PATH"
-export PATH="$(brew --prefix php54)/bin:$PATH"
-
 # Mongodb
 export PATH=$PATH:/usr/local/opt/mongodb/bin
 
 #rvm
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+if [ `uname` = "Darwin" ]; then
+# PHP
+PATH="/usr/local/sbin:/sbin:$PATH"
+export PATH="$(brew --prefix php54)/bin:$PATH"
 
 # pythonbrew
 [[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
@@ -64,6 +65,7 @@ export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export WORKON_HOME=$HOME/.virtualenvs
 export VIRTUALENVWRAPPER_PYTHON=$HOME/.pythonbrew/pythons/Python-2.7.3/bin/python
 source $HOME/.pythonbrew/pythons/Python-2.7.3/bin/virtualenvwrapper.sh
+fi
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
