@@ -76,4 +76,5 @@ export PATH=$PATH:~/.dotfiles/bin
 # android-sdk
 export PATH=$PATH:~/Documents/adt-bundle-mac-x86_64-20130219/sdk/tools
 
+source ~/.dotfiles/functions
 source ~/.dotfiles/aliases

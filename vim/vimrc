@@ -21,6 +21,10 @@ au WinLeave * set nocursorline nocursorcolumn
 au WinEnter * set cursorline cursorcolumn
 set cursorline cursorcolumn
 
+" jinjia  twig    https://github.com/lepture/vim-jinjia
+au BufNewFile,BufRead *.html,*.htm,*.shtml,*.stm,*.twig set ft=jinjia
+
+
 " search
 set incsearch
 "set highlight 	" conflict with highlight current line

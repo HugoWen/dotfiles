@@ -23,6 +23,7 @@ vim/bundle
 
 
 #oh-my-zsh
+oh-my-zsh/
 zsh/locals.zsh                                                                  
 zsh/log/.zsh_history
 zsh/projects.zsh
