@@ -13,6 +13,7 @@ if [ ! -d ~/.vim/bundle/vundle ]; then
 fi
 
 if [ ! -f /bin/zsh ]; then
+  git config --global credential.helper 'cache --timeout=360000'
   echo 'installing zsh...'
   sudo apt-get install zsh
   echo 'zsh installed'
