@@ -1,3 +1,14 @@
+#ssh agent
+
+echo ssh-add > /dev/null
+sshagentcount=`ps -ef|ack ssh-agent|wc -l`
+if [ $sshagentcount -eq 1 ]; then
+eval `ssh-agent` > /dev/null
+fi
+
+
+
+
 ##https://raw.github.com/mathiasbynens/dotfiles/master/.aliases
 # Easier navigation: .., ..., ...., ....., ~ and -
 alias ..="cd .."
@@ -73,6 +84,11 @@ alias mongo_stop='sh ~/.dotfiles/sh/mongo_stop'
 alias mongo_restart='mongo_stop; mongo_start;'
 
 
+# dnsmasq
+alias dnsmasq_start='sudo launchctl load /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist'
+alias dnsmasq_stop='sudo launchctl unload /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist'
+alias dnsmasq_restart='dnsmasq_stop; dnsmasq_start;'
+
 # virtualenv aliases
 alias v='workon'
 alias v.deactivate='deactivate'
@@ -99,10 +115,4 @@ alias proxy_all="sudo sh ~/.dotfiles/sh/proxy.sh all"
 
 #sublime text2
 alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
-
-#dev.xq.lab 192.168.11.50
-alias dev="ssh zhoupan@192.168.11.50"
-
-#vps
-alias vps="ssh henter@vps.henter.me"
 

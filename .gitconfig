@@ -6,6 +6,7 @@
 	excludesfile = /Users/henter/.gitignore_global
 	editor = /usr/bin/vim
 	filemode = false
+	autocrlf = input
 [alias]
   ci = commit -a -v
   co = checkout
