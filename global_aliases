@@ -1,7 +1,7 @@
 #ssh agent
 
 echo ssh-add > /dev/null
-sshagentcount=`ps -ef|ack ssh-agent|wc -l`
+sshagentcount=`ps -ef|grep ssh-agent|wc -l`
 if [ $sshagentcount -eq 1 ]; then
 eval `ssh-agent` > /dev/null
 fi

@@ -79,4 +79,8 @@ export PATH=$PATH:~/Documents/adt-bundle-mac-x86_64-20130219/sdk/tools
 
 source ~/.dotfiles/functions
 source ~/.dotfiles/global_aliases
-source ~/.dotfiles/aliases
+
+if [ -f ~/.dotfiles/aliases ]
+then
+    source ~/.dotfiles/aliases
+fi
