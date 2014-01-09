@@ -261,3 +261,8 @@ endif
 
 
 set pastetoggle=<F10>
+
+"LanguageToolCheck
+:set spelllang=en
+"let g:languagetool_jar='$HOME/Downloads/LanguageTool-23oxt/languagetool-gui-commons-2.3.jar'
+let g:languagetool_jar='$HOME/Downloads/LanguageTool-2.3/languagetool-commandline.jar'

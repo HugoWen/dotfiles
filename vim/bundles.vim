@@ -104,4 +104,10 @@ Bundle 'Lokaltog/vim-distinguished'
 Bundle 'chriskempson/vim-tomorrow-theme'
 Bundle 'fisadev/fisa-vim-colorscheme'
 
+"clipbard sharing
+Bundle "fakeclip"
+
+ "languagetool for english check
+Bundle 'LanguageTool'
+
 filetype plugin indent on     " required!

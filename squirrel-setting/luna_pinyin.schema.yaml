@@ -1,7 +1,9 @@
 custom_phrase:
   db_class: stabledb
   dictionary: ""
+  enable_completion: false
   enable_sentence: false
+  initial_quality: 1
   user_dict: custom_phrase
 customization: 808972558
 engine:
@@ -26,8 +28,8 @@ engine:
   translators:
     - punct_translator
     - "table_translator@custom_phrase"
-    - r10n_translator
     - reverse_lookup_translator
+    - script_translator
 key_binder:
   import_preset: default
 punctuator:
@@ -39,18 +41,18 @@ recognizer:
 reverse_lookup:
   comment_format:
     - "xform/([nl])v/$1ü/"
-  dictionary: cangjie5
+  dictionary: stroke
   enable_completion: true
   preedit_format:
-    - "xlit|abcdefghijklmnopqrstuvwxyz|日月金木水火土竹戈十大中一弓人心手口尸廿山女田難卜符|"
+    - "xlit/hspnz/一丨丿丶乙/"
   prefix: "`"
   suffix: "'"
-  tips: "〔倉頡〕"
+  tips: "〔筆畫〕"
 schema:
   author:
     - "佛振 <chen.sst@gmail.com>"
   dependencies:
-    - cangjie5
+    - stroke
   description: |
     Rime 預設的拼音輸入方案。
     參考以下作品而創作：
@@ -61,7 +63,7 @@ schema:
     
   name: "朙月拼音"
   schema_id: luna_pinyin
-  version: 0.17.custom.808972558
+  version: 0.19.custom.808972558
 speller:
   algebra:
     - "erase/^xx$/"

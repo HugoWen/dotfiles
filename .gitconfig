@@ -14,8 +14,23 @@
   br = branch
   throw = reset --hard HEAD
   throwh = reset --hard HEAD^
+
+  aa = add --all
+  dc = diff --cached
+  di = diff
+  lg = log --graph --pretty=format:'%Cred%h%Creset %C(yellow)%d %C(bold blue)%an\t%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+  type = cat-file -t
+  dump = cat-file -p
+  mff = merge --ff-only
+  mnf = merge --no-ff
+
+[merge]
+  keepBackup = false
+  tool = vimdiff
+
 [color]
   ui = true
+
 [difftool "sourcetree"]
 	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
 	path = 
@@ -23,6 +38,6 @@
 	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
 	trustExitCode = true
 [push]
-	default = matching
+	default = current
 [credential]
 	helper = osxkeychain

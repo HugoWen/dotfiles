@@ -22,4 +22,5 @@ fi
 ln -sf ~/.dotfiles/zshrc ~/.zshrc
 chsh -s /bin/zsh
 
-echo 'launch vim, run :BundleInstall'
+#echo 'launch vim, run :BundleInstall'
+vim +BundleInstall +qall

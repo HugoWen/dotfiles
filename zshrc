@@ -8,7 +8,12 @@ ZSH=$HOME/.dotfiles/oh-my-zsh
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="robbyrussell"
 #ZSH_THEME="blinks"
-ZSH_THEME="dpoggi"
+
+if [ `uname` = "Darwin" ]; then
+    ZSH_THEME="robbyrussell"
+else
+    ZSH_THEME="dpoggi"
+fi
 
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
@@ -45,6 +50,11 @@ export LANG=en_US.UTF-8
 
 export LC_CTYPE="utf-8"
 
+#ssh-agent
+ssh-agent > /dev/null
+#ssh-add > /dev/null
+
+
 # z
 source ${HOME}/.dotfiles/z/z.sh
 
@@ -53,6 +63,9 @@ export PATH=$PATH:/usr/local/opt/mongodb/bin
 
 #rvm
 export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
+#node npm
+export PATH=$PATH:/usr/local/share/npm/bin
 
 if [ `uname` = "Darwin" ]; then
 # PHP
@@ -78,7 +91,14 @@ export PATH=$PATH:~/.dotfiles/bin
 # android-sdk
 export PATH=$PATH:~/Documents/adt-bundle-mac-x86_64-20130219/sdk/tools
 
-source ~/.dotfiles/functions
+#GOPATH
+export GOPATH=~/tmp/gocode
+
+# Loads all my bash functions
+for f in ~/.dotfiles/.functions/*.bash; do
+  . $f;
+done
+
 source ~/.dotfiles/global_aliases
 
 if [ -f ~/.dotfiles/aliases ]

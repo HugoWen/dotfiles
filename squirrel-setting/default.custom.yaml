@@ -11,7 +11,8 @@
 # 設爲 noop，屏蔽該切換鍵
 
 patch:
-    "menu/page_size": 9
+  menu:
+    page_size: 10
   ascii_composer/switch_key:
     Shift_L: inline_ascii
     Shift_R: noop
