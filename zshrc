@@ -44,6 +44,9 @@ plugins=(git node brew bundle cap gem github osx rails ruby rvm svn textmate sym
 
 source $ZSH/oh-my-zsh.sh
 
+# zsh-completions 
+export PATH=$PATH:/usr/local/share/zsh-completions
+
 # Customize to your needs...
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8

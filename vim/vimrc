@@ -104,6 +104,7 @@ autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
 " tabbar
 let g:Tb_MaxSize = 2
 let g:Tb_TabWrap = 1
+"let g:Tb_UseSingleClick = 1
 
 hi Tb_Normal guifg=white ctermfg=white
 hi Tb_Changed guifg=green ctermfg=green
@@ -262,7 +263,15 @@ endif
 
 set pastetoggle=<F10>
 
+"剪切板共享
+"set clipboard=unnamed
+
 "LanguageToolCheck
 :set spelllang=en
 "let g:languagetool_jar='$HOME/Downloads/LanguageTool-23oxt/languagetool-gui-commons-2.3.jar'
 let g:languagetool_jar='$HOME/Downloads/LanguageTool-2.3/languagetool-commandline.jar'
+
+"ack
+"let g:ackprg="/usr/local/bin/ack -H --nocolor --nogroup --nocolumn"
+"ag
+let g:agprg="/usr/local/bin/ag --column"

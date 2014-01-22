@@ -107,6 +107,9 @@ Bundle 'fisadev/fisa-vim-colorscheme'
 "clipbard sharing
 Bundle "fakeclip"
 
+"the silver searcher
+Bundle "rking/ag.vim"
+
  "languagetool for english check
 Bundle 'LanguageTool'
 

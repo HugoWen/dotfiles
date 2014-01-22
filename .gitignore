@@ -33,3 +33,5 @@ zsh/custom/*
 !zsh/custom/example.zshcache
 zsh/cache/
 zsh/*.swp
+
+mutt/cache
