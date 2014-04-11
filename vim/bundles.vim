@@ -27,7 +27,7 @@ Bundle 'tomtom/tlib_vim'
 "-----------------
 " Fast navigation
 "-----------------
-Bundle 'tsaleh/vim-matchit'
+Bundle 'tmhedberg/matchit'
 Bundle 'Lokaltog/vim-easymotion'
 
 "--------------
@@ -109,6 +109,13 @@ Bundle "fakeclip"
 
 "the silver searcher
 Bundle "rking/ag.vim"
+
+"vim-multiple-cursors
+"http://foocoder.com/blog/mei-tian-%5B%3F%5D-ge-vimcha-jian-vim-multiple-cursors.html/
+Bundle "terryma/vim-multiple-cursors"
+
+"molokai color schema
+Bundle "tomasr/molokai"
 
  "languagetool for english check
 Bundle 'LanguageTool'
