@@ -265,6 +265,8 @@ set pastetoggle=<F10>
 
 "剪切板共享
 "set clipboard=unnamed
+nmap <F8> :set clipboard=<cr>
+nmap <F9> :set clipboard=unnamed<cr>
 
 "LanguageToolCheck
 :set spelllang=en

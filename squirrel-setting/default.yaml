@@ -5,7 +5,7 @@ ascii_composer:
     Control_R: noop
     Shift_L: inline_ascii
     Shift_R: noop
-config_version: 0.30.custom.321862432
+config_version: 0.32.custom.321862432
 customization: 321862432
 key_binder:
   bindings:

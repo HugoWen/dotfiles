@@ -44,6 +44,7 @@ plugins=(git node brew bundle cap gem github osx rails ruby rvm svn textmate sym
 
 source $ZSH/oh-my-zsh.sh
 
+
 # zsh-completions 
 export PATH=$PATH:/usr/local/share/zsh-completions
 
@@ -53,8 +54,15 @@ export LANG=en_US.UTF-8
 
 export LC_CTYPE="utf-8"
 
+#svn editor
+export SVN_EDITOR=vim
+
 #ssh-agent
-ssh-agent > /dev/null
+#ps aux|grep ssh-agent
+#CODE=$?
+#if [ $CODE -ne 0 ]; then
+#    ssh-agent > /dev/null
+#fi
 #ssh-add > /dev/null
 
 
@@ -108,3 +116,6 @@ if [ -f ~/.dotfiles/aliases ]
 then
     source ~/.dotfiles/aliases
 fi
+
+export LUAJIT_LIB=/usr/local/Cellar/luajit/2.0.2/lib
+export LUAJIT_INC=/usr/local/Cellar/luajit/2.0.2/include/luajit-2.0
