@@ -89,6 +89,11 @@ alias dnsmasq_start='sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl
 alias dnsmasq_stop='sudo launchctl unload -w /Library/LaunchDaemons/homebrew.mxcl.dnsmasq.plist'
 alias dnsmasq_restart='dnsmasq_stop; dnsmasq_start;'
 
+# redis
+alias redis_start='sudo launchctl load -w /Library/LaunchDaemons/homebrew.mxcl.redis.plist'
+alias redis_stop='sudo launchctl unload -w /Library/LaunchDaemons/homebrew.mxcl.redis.plist'
+alias redis_restart='redis_stop; redis_start;'
+
 # virtualenv aliases
 alias v='workon'
 alias v.deactivate='deactivate'
@@ -104,9 +109,20 @@ alias v.cd='cdvirtualenv'
 alias v.lssitepackages='lssitepackages'
 alias v.ls='lssitepackages'
 
+#mds index
+alias index_stop='sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist'
+alias index_start='sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist'
+
+#noe webkit
+alias nw='/Applications/node-webkit.app/Contents/MacOS/node-webkit'
 #sublime text2
 alias subl='/Applications/Sublime\ Text\ 2.app/Contents/SharedSupport/bin/subl'
 
+#restart virtualbox
+alias vb_restart='sudo /Library/StartupItems/VirtualBox/VirtualBox restart'
 
 #统计某php项目整体行数（好吧 纯娱乐）
 alias countphp="find . -name '*.php'|xargs wc -l|awk '{s+=\$1} END { print s}'"
+
+#cocoapods
+alias podinstall="pod install --verbose --no-repo-update"

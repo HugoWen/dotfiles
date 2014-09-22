@@ -51,7 +51,7 @@ schema:
     
   name: "小鶴雙拼"
   schema_id: double_pinyin_flypy
-  version: 0.16.custom.441081249
+  version: 0.17.custom.441081249
 speller:
   algebra:
     - "erase/^xx$/"
@@ -92,6 +92,8 @@ switches:
     states: ["中文", "西文"]
   - name: full_shape
     states: ["半角", "全角"]
+  - name: ascii_punct
+    states: ["，。", "，．"]
   - name: simplification
     states: ["漢字", "汉字"]
 translator:

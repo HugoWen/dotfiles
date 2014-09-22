@@ -5,7 +5,7 @@ ascii_composer:
     Control_R: noop
     Shift_L: inline_ascii
     Shift_R: noop
-config_version: 0.32.custom.321862432
+config_version: 0.34.custom.321862432
 customization: 321862432
 key_binder:
   bindings:
@@ -17,7 +17,9 @@ key_binder:
     - {accept: "Control+e", send: End, when: composing}
     - {accept: "Control+d", send: Delete, when: composing}
     - {accept: "Control+k", send: "Shift+Delete", when: composing}
+    - {accept: "Control+h", send: BackSpace, when: composing}
     - {accept: "Control+g", send: Escape, when: composing}
+    - {accept: "Control+bracketleft", send: Escape, when: composing}
     - {accept: "Alt+v", send: Page_Up, when: composing}
     - {accept: "Control+v", send: Page_Down, when: composing}
     - {accept: ISO_Left_Tab, send: Page_Up, when: composing}
@@ -38,6 +40,7 @@ key_binder:
     - {accept: "Control+Shift+dollar", toggle: simplification, when: always}
     - {accept: "Control+Shift+percent", toggle: extended_charset, when: always}
     - {accept: "Shift+space", toggle: full_shape, when: always}
+    - {accept: "Control+period", toggle: ascii_punct, when: always}
 menu:
   page_size: 10
 punctuator:
@@ -125,5 +128,6 @@ switcher:
     - F4
   save_options:
     - full_shape
+    - ascii_punct
     - simplification
     - extended_charset

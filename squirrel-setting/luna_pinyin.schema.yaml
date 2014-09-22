@@ -63,7 +63,7 @@ schema:
     
   name: "朙月拼音"
   schema_id: luna_pinyin
-  version: 0.19.custom.808972558
+  version: 0.20.custom.808972558
 speller:
   algebra:
     - "erase/^xx$/"
@@ -87,6 +87,8 @@ switches:
     states: ["中文", "西文"]
   - name: full_shape
     states: ["半角", "全角"]
+  - name: ascii_punct
+    states: ["，。", "，．"]
   - name: simplification
     states: ["漢字", "汉字"]
 translator:
