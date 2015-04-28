@@ -44,7 +44,6 @@ plugins=(git node brew bundle cap gem github osx rails ruby rvm svn textmate sym
 
 source $ZSH/oh-my-zsh.sh
 
-
 # zsh-completions 
 export PATH=$PATH:/usr/local/share/zsh-completions
 
@@ -65,15 +64,11 @@ export SVN_EDITOR=vim
 #fi
 #ssh-add > /dev/null
 
-
-# z
-source ${HOME}/.dotfiles/z/z.sh
-
 # Mongodb
 export PATH=$PATH:/usr/local/opt/mongodb/bin
 
 #rvm
-export PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 #node npm
 export PATH=$PATH:/usr/local/share/npm/bin
@@ -81,10 +76,11 @@ export PATH=$PATH:/usr/local/share/npm/bin
 if [ `uname` = "Darwin" ]; then
 # PHP
 PATH="/usr/local/sbin:/sbin:$PATH"
-export PATH="$(brew --prefix php54)/bin:$PATH"
+#export PATH="$(brew --prefix homebrew/php/php55)/bin:$PATH"
+export PATH="$(brew --prefix php55)/bin:$PATH"
 
 # pythonbrew
-[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
+#[[ -s $HOME/.pythonbrew/etc/bashrc ]] && source $HOME/.pythonbrew/etc/bashrc
 
 # virtualenv
 # http://765i.cn/设置一个干净的python环境（python沙盒）/
@@ -100,7 +96,8 @@ export PATH="/usr/local/heroku/bin:$PATH"
 export PATH=$PATH:~/.dotfiles/bin
 
 # android-sdk
-export PATH=$PATH:~/Documents/adt-bundle-mac-x86_64-20130219/sdk/tools
+export PATH=$PATH:~/Documents/adt-bundle-mac-x86_64-20140702/sdk/tools
+export ANDROID_HOME=~/Documents/adt-bundle-mac-x86_64-20140702/sdk
 
 #GOPATH
 export GOPATH=~/tmp/gocode
@@ -119,3 +116,99 @@ fi
 
 export LUAJIT_LIB=/usr/local/Cellar/luajit/2.0.2/lib
 export LUAJIT_INC=/usr/local/Cellar/luajit/2.0.2/include/luajit-2.0
+
+
+#docker
+#alias docker="docker -H tcp://$(/usr/local/bin/boot2docker ip 2>/dev/null):2375"
+#export DOCKER_HOST=tcp://$(/usr/local/bin/boot2docker ip 2>/dev/null):2375
+###-begin-nativescript-completion-###
+if complete &>/dev/null; then
+  _nativescript_completion () {
+    local si="$IFS"
+    IFS=$'\n' COMPREPLY=($(COMP_CWORD="$COMP_CWORD" \
+                           COMP_LINE="$COMP_LINE" \
+                           COMP_POINT="$COMP_POINT" \
+                           nativescript completion -- "${COMP_WORDS[@]}" \
+                           2>/dev/null)) || return $?
+    IFS="$si"
+  }
+  complete -F _nativescript_completion -o default nativescript
+elif compctl &>/dev/null; then
+  _nativescript_completion () {
+    local cword line point words si
+    read -Ac words
+    read -cn cword
+    let cword-=1
+    read -l line
+    read -ln point
+    si="$IFS"
+    IFS=$'\n' reply=($(COMP_CWORD="$cword" \
+                       COMP_LINE="$line" \
+                       COMP_POINT="$point" \
+                       nativescript completion -- "${words[@]}" \
+                       2>/dev/null)) || return $?
+    IFS="$si"
+  }
+  compctl -K _nativescript_completion -f nativescript
+fi
+###-end-nativescript-completion-######-begin-tns-completion-###
+if complete &>/dev/null; then
+  _tns_completion () {
+    local si="$IFS"
+    IFS=$'\n' COMPREPLY=($(COMP_CWORD="$COMP_CWORD" \
+                           COMP_LINE="$COMP_LINE" \
+                           COMP_POINT="$COMP_POINT" \
+                           tns completion -- "${COMP_WORDS[@]}" \
+                           2>/dev/null)) || return $?
+    IFS="$si"
+  }
+  complete -F _tns_completion -o default tns
+elif compctl &>/dev/null; then
+  _tns_completion () {
+    local cword line point words si
+    read -Ac words
+    read -cn cword
+    let cword-=1
+    read -l line
+    read -ln point
+    si="$IFS"
+    IFS=$'\n' reply=($(COMP_CWORD="$cword" \
+                       COMP_LINE="$line" \
+                       COMP_POINT="$point" \
+                       tns completion -- "${words[@]}" \
+                       2>/dev/null)) || return $?
+    IFS="$si"
+  }
+  compctl -K _tns_completion -f tns
+fi
+###-end-tns-completion-######-begin-appbuilder-completion-###
+if complete &>/dev/null; then
+  _appbuilder_completion () {
+    local si="$IFS"
+    IFS=$'\n' COMPREPLY=($(COMP_CWORD="$COMP_CWORD" \
+                           COMP_LINE="$COMP_LINE" \
+                           COMP_POINT="$COMP_POINT" \
+                           appbuilder completion -- "${COMP_WORDS[@]}" \
+                           2>/dev/null)) || return $?
+    IFS="$si"
+  }
+  complete -F _appbuilder_completion -o default appbuilder
+elif compctl &>/dev/null; then
+  _appbuilder_completion () {
+    local cword line point words si
+    read -Ac words
+    read -cn cword
+    let cword-=1
+    read -l line
+    read -ln point
+    si="$IFS"
+    IFS=$'\n' reply=($(COMP_CWORD="$cword" \
+                       COMP_LINE="$line" \
+                       COMP_POINT="$point" \
+                       appbuilder completion -- "${words[@]}" \
+                       2>/dev/null)) || return $?
+    IFS="$si"
+  }
+  compctl -K _appbuilder_completion -f appbuilder
+fi
+###-end-appbuilder-completion-###

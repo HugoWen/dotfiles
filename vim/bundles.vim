@@ -120,4 +120,6 @@ Bundle "tomasr/molokai"
  "languagetool for english check
 Bundle 'LanguageTool'
 
+ "go
+Bundle 'fatih/vim-go'
 filetype plugin indent on     " required!

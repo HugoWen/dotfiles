@@ -79,8 +79,10 @@ alias mysql_stop='mysql.server stop'
 alias mysql_restart='mysql.server restart'
 
 # mongo control
-alias mongo_start='/usr/local/opt/mongodb/bin/mongod --fork'
-alias mongo_stop='sh ~/.dotfiles/sh/mongo_stop'
+#alias mongo_start='/usr/local/opt/mongodb/bin/mongod --fork --syslog'
+alias mongo_start='launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist'
+#alias mongo_stop='sh ~/.dotfiles/sh/mongo_stop'
+alias mongo_stop='launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mongodb.plist'
 alias mongo_restart='mongo_stop; mongo_start;'
 
 

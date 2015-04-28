@@ -11,4 +11,6 @@ elif [ "$short" == "10.7" ] || [ "$short" == "10.8" ]; then
 elif [ "$short" == "10.9" ]; then
     dscacheutil -flushcache;
     sudo killall -HUP mDNSResponder
+elif [ "$short" == "10.1" ]; then
+    dscacheutil -flushcache;
 fi
